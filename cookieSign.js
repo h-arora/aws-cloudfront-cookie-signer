@@ -5,12 +5,13 @@ let keyPairId = YOUR_KEY_PAIR_ID;
 let privateKey = YOUR_PRIVATE_KEY;
 
 let cfUrl = "xyz.cloudfront.net";
+let expiry = 1543607263;
 
 let policy = {
   'Statement': [{
     'Resource': 'http*://' + cfUrl + '/*',
     'Condition': {
-      'DateLessThan': {'AWS:EpochTime': 1543607263}
+      'DateLessThan': {'AWS:EpochTime': expiry}
     }
   }]
 };
